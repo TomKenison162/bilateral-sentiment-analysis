@@ -2,23 +2,23 @@ import pandas as pd
 from tqdm import tqdm
 from src.data.hf_loader import HFDataLoader
 from src.analysis.country_detector import CountryDetector
-from src.analysis.sentiment_analyser import SentimentAnalyzer
+from src.analysis.sentiment_analyser import SentimentAnalyser
 
 class MVPPipeline:
     def __init__(self):
         self.loader = HFDataLoader()
         self.country_detector = CountryDetector()
-        self.sentiment_analyzer = SentimentAnalyzer()
+        self.sentiment_analyzer = SentimentAnalyser()
     
     def run_uk_usa_analysis(self, sample_size: int = 5000) -> pd.DataFrame:
         """Run MVP analysis: UK media coverage of USA"""
-        print("🚀 Starting UK→USA Sentiment Analysis")
+        print("Starting UK→USA Sentiment Analysis")
         
         # 1. Load data
         df = self.loader.load_sample(sample_size)
         
         # 2. Filter UK sources (simplified - using title/content analysis)
-        print("🔍 Finding UK articles about USA...")
+        print("Finding UK articles about USA...")
         results = []
         
         for idx, row in tqdm(df.iterrows(), total=len(df)):

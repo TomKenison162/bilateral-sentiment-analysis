@@ -17,7 +17,7 @@ def main():
         positive_pct = (results['sentiment_label'] == 'positive').mean() * 100
         negative_pct = (results['sentiment_label'] == 'negative').mean() * 100
         
-        print(f"\n📊 UK→USA Sentiment Results:")
+        print(f"\n UK→USA Sentiment Results:")
         print(f"   Average Sentiment: {avg_sentiment:.3f}")
         print(f"   Positive Articles: {positive_pct:.1f}%")
         print(f"   Negative Articles: {negative_pct:.1f}%")
@@ -25,10 +25,10 @@ def main():
         
         # Save results
         results.to_csv('data/mvp_results.csv', index=False)
-        print(f"💾 Saved {len(results)} articles to data/mvp_results.csv")
+        print(f"Saved {len(results)} articles to data/mvp_results.csv")
         
         # Show sample
-        print(f"\n📝 Sample Articles:")
+        print(f"\nSample Articles:")
         for idx, row in results.head(3).iterrows():
             print(f"   - {row['title'][:60]}... → {row['sentiment_label']} ({row['vader_compound']:.3f})")
     else:
