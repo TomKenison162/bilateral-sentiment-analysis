@@ -1,0 +1,18 @@
+# Data
+data/raw/
+data/processed/
+*.csv
+*.json
+*.parquet
+
+# Environment
+.env
+venv/
+.env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
